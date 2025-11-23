@@ -1,5 +1,5 @@
 from db.load_csv import loading_csv
-from db.queries import queiries
+from db.queries import institution_name, course_name, least_common, most_common, count_per_district, free_query
 
 user_choice=int(input('''Please, choice one option!
 1. Load CSV into DB 
@@ -16,20 +16,26 @@ user_choice=int(input('''Please, choice one option!
  
 7. Exit
 '''))
-
-if user_choice == 1:
-    print("loading... please wait...")
-    loading_csv()
-if user_choice == 2:
-    querie= input("Enter your quire: ")
-    queiries(querie)
-if user_choice == 3:
-    pass
-if user_choice == 4:
-    pass
-if user_choice == 5:
-    pass
-if user_choice == 6:
-    pass
-if user_choice == 7:
-    pass
+while True
+    if user_choice == 1:
+        print("loading... please wait...")
+        loading_csv()
+    if user_choice == 2:
+        institution = input("Enter institution name: ")
+        institution_name(institution)
+    if user_choice == 3:
+        curse=input("Enter curse name: ")
+        course_name(curse)
+    if user_choice == 4:
+        choice=int(input("for lest common press 1, for most common press 2: "))
+        if choice ==1:
+            least_common()
+        if choice == 2:
+            most_common()
+    if user_choice == 5:
+        count_per_district()
+    if user_choice == 6:
+        query=input("Enter free SQL Query: ")
+        free_query(query)
+    if user_choice == 7:
+        break
